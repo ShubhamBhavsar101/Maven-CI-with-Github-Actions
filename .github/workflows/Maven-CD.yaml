@@ -1,0 +1,22 @@
+
+name: Maven-CD
+
+on:
+  workflow_run:
+    workflows: ["Maven-CI"]
+    types:
+      - completed
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+    - name: Pull the docker container
+      run: docker pull shubhszone/spring-maven-app:v1
+
+    - name: Remove previous docker container
+      run: docker rm -f spring-maven-app-container || true
+    
+    - name: Run the docker container
+      run: docker run -d -p 80:8080 shubhszone/spring-maven-app:v1
