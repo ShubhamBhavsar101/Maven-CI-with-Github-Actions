@@ -13,10 +13,10 @@ jobs:
 
     steps:
     - name: Pull the docker container
-      run: docker pull shubhszone/spring-maven-app:v1
+      run: sudo docker pull shubhszone/spring-maven-app:v1
 
     - name: Remove previous docker container
-      run: docker rm -f spring-maven-app-container || true
+      run: sudo docker rm -f spring-maven-app-container || true
     
     - name: Run the docker container
-      run: docker run -d -p 80:8080 shubhszone/spring-maven-app:v1
+      run: sudo docker run -d -p 80:8080 shubhszone/spring-maven-app:v1
