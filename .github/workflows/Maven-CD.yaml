@@ -19,4 +19,4 @@ jobs:
       run: sudo docker rm -f spring-maven-app-container || true
     
     - name: Run the docker container
-      run: sudo docker run -d -p 80:8080 shubhszone/spring-maven-app:v1
+      run: sudo docker run -d -p 80:8080 --name spring-maven-app-container shubhszone/spring-maven-app:v1
