@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Java ${{ matrix.Java }} sample
+    name: Maven Build
     steps:
       - uses: actions/checkout@v4
       - name: Setup java
@@ -16,4 +16,4 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 17
-      - run: java HelloWorldApp.java
+      - run: mvn clean install
