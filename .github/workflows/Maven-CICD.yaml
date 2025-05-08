@@ -17,6 +17,6 @@ jobs:
       - name: Setup java
         uses: actions/setup-java@v4
         with:
-          distribution: '<distribution>'
+          distribution: 'temurin'
           java-version: ${{ matrix.java }}
       - run: java HelloWorldApp.java
